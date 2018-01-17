@@ -1,0 +1,28 @@
+.appointment-form {
+  & input {
+    font: inherit;
+    float: left;
+    width: 106px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 7px 15px;
+    text-transform: inherit;
+    color: inherit;
+    border: 2px solid #000;
+    outline: none;
+    background-color: #f9f6f3;
+
+    &:focus {
+      border: 2px solid @brown;
+    }
+  }
+
+  & input:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  & .btn {
+    clear: both;
+    width: 100%;
+  }
+}

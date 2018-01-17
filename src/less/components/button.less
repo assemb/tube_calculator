@@ -1,0 +1,92 @@
+.btn {
+  font-family: @ffamily;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 23px;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 3px 15px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: top;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  outline: none;
+  background-color: #507299;
+
+  &--vkontakte {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    padding-left: 60px;
+    border-radius: 3px;
+    border-bottom: 4px solid darken(#507299, 10%);
+    margin-right: 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 15px;
+      width: 40px;
+      height: 40px;
+      background-image: url('../img/sprite-social.svg');
+      background-repeat: no-repeat;
+      background-position: -100px 0px;
+      background-size: 133px 40px; 
+
+    }
+
+
+    &:hover, &:active {
+      border-bottom: 4px solid darken(@main-c, 10%);
+    }
+
+  }
+
+  &--instagram {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 15px 45px;
+    padding-left: 60px;
+    border-radius: 3px;
+    border-bottom: 4px solid darken(#d53082, 10%);
+    margin-right: 0;
+    background-color: #d53082;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 15px;
+      width: 40px;
+      height: 40px;
+      background-image: url('../img/sprite-social.svg');
+      background-repeat: no-repeat;
+      background-position: -50px 0px;
+      background-size: 133px 40px; 
+    }
+
+    &:hover, &:active {
+      border-bottom: 4px solid darken(@main-c, 10%);
+    }
+
+  }
+
+}
+
+.btn:hover, .btn:active {
+  background-color: @main-c;
+}
+
+.btn--disabled, .btn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.btn--disabled:hover, .btn:disabled:hover {
+  background-color: #000;
+}

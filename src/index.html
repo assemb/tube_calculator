@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS calc</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+</head>
+<body>
+  <div class="calculator">
+    <h1 class="calculator__title">Tube Calculator</h1>
+
+    <div class="display">
+      <div class="display_inner"> 
+        <div class="display__cell"> </div>
+        <div class="display__cell"></div>
+        <div class="display__cell"></div>
+        <div class="display__cell"></div>
+        <div class="display__cell"></div>
+        <div class="display__cell"></div>
+        <div class="display__cell"></div>
+        <div class="display__cell"></div>
+      </div>
+      <p class='display__answer'>
+        0
+      </p>
+      <div class='display__history'>
+        0
+      </div>
+    </div>
+
+    <div class="pinpad">
+      <button class="pinpad__pin pinpad__pin--red">AC</button>
+      <button class="pinpad__pin pinpad__pin--red">CE</button>
+      <button class="pinpad__pin">/</button>
+      <button class="pinpad__pin">*</button>
+
+      <button class="pinpad__pin">7</button>
+      <button class="pinpad__pin">8</button>
+      <button class="pinpad__pin">9</button>
+      <button class="pinpad__pin">-</button>
+
+      <button class="pinpad__pin">4</button>
+      <button class="pinpad__pin">5</button>
+      <button class="pinpad__pin">6</button>
+      <button class="pinpad__pin pinpad__pin--plus">+</button>
+
+      <button class="pinpad__pin">1</button>
+      <button class="pinpad__pin">2</button>
+      <button class="pinpad__pin">3</button>
+      <button class="pinpad__pin pinpad__pin--hidden"></button>
+
+      <button class="pinpad__pin pinpad__pin--zero">0</button>
+      <button class="pinpad__pin">.</button>
+      <button class="pinpad__pin pinpad__pin--equal" >=</button>
+    </div>
+  </div>
+
+  <div class="about">
+    Designed & Coded by <a href="http://kostinweb.ru/">Aleksandr Kostin</a>
+  </div>
+
+  <script src="js/calculator.js"></script>
+</body>
+</html>

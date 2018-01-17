@@ -1,0 +1,221 @@
+@keyframes fadein {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  max-width: 480px;
+  height: 600px;
+  margin: 10px auto;
+  background-color: #777;
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAU0lEQVQIHQXBwRGDIBAAwO2/AMcCDHAcPjIRxjJ8Je1kl1uqUgphsWu6w0sIG6npLpcUBql4e/wsVRKabrkNTacIYbMrwsF06rqUhsnXVKVT+Hj+Ue4rPSONk4kAAAAASUVORK5CYII=);
+  box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68);
+  @media @phone {
+    height: 100vh;
+    margin: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 5px;
+    color: #888;
+  }
+
+}
+
+.display {
+  width: 100%;
+  padding-top: 5px;
+  min-height: 18%;
+  background-color: #000;
+  border-top: solid 1px #222;
+  border-bottom: solid 1px #333;
+  margin-bottom: 10px;
+
+  &__answer {
+    display: none;
+  }
+
+  &__history {
+    padding-right: 4%;
+    color: @accent;
+    text-align: right;
+  }
+
+  &_inner {
+    font-size: 0;
+    text-align: center;
+  }
+
+  &__cell {
+    display: inline-block;
+    vertical-align: top;
+    width: 12%;
+    background: url('../img/cells.png');
+    background-size: auto 100%;
+
+
+    &:before{
+      content: "";
+      z-index: 20;
+      display: block;
+      padding-top: 150%;  /* ratio of 60*90px */
+    }
+
+    &--0 {
+      background-position: 100%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+
+    }
+    &--1 {
+      background-position: 10%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--2 {
+      background-position: 20%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--3 {
+      background-position: 30%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--4 {
+      background-position: 40%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--5 {
+      background-position: 50%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--6 {
+      background-position: 60%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--7 {
+      background-position: 70%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--8 {
+      background-position: 80%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+    &--9 {
+      background-position: 90%;
+      animation-name: fadein;
+      animation-duration: 0.5s;
+    }
+
+    &--dot {
+      position: relative;
+    }
+
+    &--dot:after {
+      content: "";
+      position: absolute;
+      bottom: 15%;
+      right: 15%;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      
+      background-color: @accent;
+    }
+
+    &--minus {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        right: 33%;
+        width: 33%;
+        height: 2%;
+        border-radius: 1%;
+
+        background-color: @accent;
+      }
+    }
+  }
+}
+
+.pinpad {
+
+  font-size: 0;
+   
+  padding: 1%;
+  padding-bottom: 2%;
+  &__pin {
+    display: inline-block;;
+    vertical-align: top;
+    box-sizing: border-box;
+
+
+    border-radius: 5px;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #222;
+    border-left: 1px solid #222;
+    border-right: 1px solid #444;
+    background: rgb(11,19,19);
+    background: linear-gradient(to bottom, rgb(14, 14, 14), rgb(44, 44, 44));
+    width: 25%;
+    height: 80px;
+    font-size: 22px;
+    box-shadow: 0px 3px 0px 0px #222121, inset -1px -1px 10px 1px #353535;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--zero {
+      width: 50%;
+    }
+
+    &--equal {
+      //position: absolute;
+      height: 160px;
+      margin-top: -80px;
+
+    }
+
+    &:active {
+      transform: translate(0px, 3px);
+      box-shadow: none;
+    }
+
+
+  }
+}
+
+.about {
+  text-align: center;
+
+  a {
+    color: @accent;
+  }
+
+  @media @phone {
+    display: none;
+  }
+}

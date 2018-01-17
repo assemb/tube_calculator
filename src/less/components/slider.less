@@ -1,0 +1,118 @@
+.slider {
+    position: relative;
+
+    & input[type=radio] {
+        display: none;
+    }
+
+    &__inner {
+        overflow: hidden;
+
+    }
+
+    &__slides {
+        width: 400%;
+        transition: transform 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    }
+
+    &__slide {
+        box-sizing: border-box;
+        width: 25%;
+        float: left;
+        min-height: 150px;
+        padding-left: 100px;
+        background: url('../img/slide-img-1.png') no-repeat 0 50%;
+
+        & h3 {
+            .h3 ();
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        bottom: -25px;
+        z-index: 10;
+        left: 50%;
+        margin-left: -30px;
+        text-align: center;
+
+        & label {
+            display: inline-block;
+            border-radius: 5px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #bbb;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+
+    }
+
+    &__controls {
+
+
+        & label {
+
+            position: absolute;
+            bottom: -25px;
+            right: 10px;
+            z-index: 10;
+            border-radius: 5px;
+            display: none;
+            width: 25px;
+            height: 25px;
+            background: lighten(@grey-c, 30%);
+            transition: background-color 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: @main-c;
+            }
+        }
+
+    }
+}
+
+#btn-1:checked ~ .slider__dots label[for="btn-1"],
+#btn-2:checked ~ .slider__dots label[for="btn-2"],
+#btn-3:checked ~ .slider__dots label[for="btn-3"],
+#btn-4:checked ~ .slider__dots label[for="btn-4"] {
+    background-color: @main-c;
+}
+
+#btn-1:checked ~ .slider__controls label[for="btn-2"],
+#btn-2:checked ~ .slider__controls label[for="btn-3"],
+#btn-3:checked ~ .slider__controls label[for="btn-4"],
+#btn-4:checked ~ .slider__controls label[for="btn-1"] {
+    background-image: url('../img/btn-right.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: inline-block;
+    right: 30px;
+}
+
+#btn-1:checked ~ .slider__controls label[for="btn-4"],
+#btn-2:checked ~ .slider__controls label[for="btn-1"],
+#btn-3:checked ~ .slider__controls label[for="btn-2"],
+#btn-4:checked ~ .slider__controls label[for="btn-3"] {
+    background-image: url('../img/btn-left.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: inline-block;
+    right: 60px;
+}
+
+
+#btn-1:checked ~ .slider__inner .slider__slides { 
+    transform: translate(0);
+}
+#btn-2:checked ~ .slider__inner .slider__slides { 
+    transform: translate(-25%);
+}
+#btn-3:checked ~ .slider__inner .slider__slides { 
+    transform: translate(-50%);
+}
+#btn-4:checked ~ .slider__inner .slider__slides { 
+    transform: translate(-75%);
+}
